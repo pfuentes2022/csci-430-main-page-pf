@@ -1,0 +1,28 @@
+body{
+    background-color: #273151;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav {
+    background-color: #456384;
+}
+nav h1 {
+    color: rgb(220, 235, 255);
+}
+
+h1 {
+    color:rgb(205, 233, 255);
+}
+
+h2 {
+    color:#ffebed;
+}
+
+p {
+    color:rgb(212, 212, 255);
+}
+
+.footer-custom {
+    text-align: center;
+    font-size: .75em;
+}
