@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        {{>head}}
+    </head>
+
+    <body>
+        {{>navbar}}
+
+
+
+        <form class="container">
+            <label for="email">E-Mail Address</label>
+            <input type="text" id="email" name="email"><br>
+            <label for="user">Username</label>
+            <input type="text" id="user" name="user">
+            <div class="form-text">Username must be at least 4 characters long</div>
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password"><br>
+            <br>
+            <button class="make-account btn">Submit</button>
+        </form>
+        
+    </body>
+
+
+    {{>footer}}
+</html>
