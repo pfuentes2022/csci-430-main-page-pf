@@ -2,6 +2,7 @@
 <html lang="eng">
     <head>
         {{>head}}
+        <script defer src="/js/login.js"></script>
     </head>
 
     <body>
@@ -10,17 +11,18 @@
 
         
         <div class="container">
-            <form>
+            <form id="loginForm">
                 <label for="email">E-Mail Address</label>
                 <input type="text" id="email" name="email"><br>
                 <label for="password">Password</label>
                 <input type="text" id="password" name="password"><br>
                 <br>
                 <div class="container">
-                    <a class="sign-in btn" href="main">Sign in</a>
+                    <!--<a class="sign-in btn" href="main"></a>-->
+                    <button class="btn">Sign in</button>
                 </div>
             </form>
-            <br>
+            <p id="message" class="message"></p>
             <p><a class="make-account btn" href="create_account">Create a new account</a></p>
         </div>
 
