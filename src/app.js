@@ -2,12 +2,12 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 
-const indexRouter = require('../routers/index') 
-const loginRouter = require('../routers/login')
-const createaccountRouter = require('../routers/create-account')
-const mainRouter = require('../routers/main')
-const loremRouter = require('../routers/lorem_ipsum')
-const _404Router = require('../routers/404')
+const indexRouter = require('./routers/index') 
+const loginRouter = require('./routers/login')
+const createaccountRouter = require('./routers/create-account')
+const mainRouter = require('./routers/main')
+const loremRouter = require('./routers/lorem_ipsum')
+const _404Router = require('./routers/404')
 
 const app = express() 
 
