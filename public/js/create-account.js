@@ -1,13 +1,14 @@
 const protocol = window.location.protocol
 const host = window.location.host
 
-const createAccountForm = document.querySelector('#makeAccount')
+const makeAccount = document.querySelector('#makeAccount')
 const emailInput = document.querySelector('#email')
 const usernameInput = document.querySelector('#username')
 const passwordInput = document.querySelector('#password')
 const message = document.querySelector("#message")
+//console.log(makeAccount)
 
-createAccountForm.addEventListener('Submit', async(e) => {
+makeAccount.addEventListener('submit', async(e) => {
     e.preventDefault()
 
     const email = emailInput.value;

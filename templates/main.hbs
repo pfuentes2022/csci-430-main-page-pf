@@ -2,11 +2,13 @@
 <html lang="eng">
     <head>
         {{>head}}
+        <script defer src="/js/main.js"></script>
     </head>
 
     <body>
-        {{>navbar}}
-
+        <!--{{>navbar}}-->
+        
+        {{>accountControl}}
 
 
         <div class="container">
@@ -22,6 +24,8 @@
             <p>
                 Access token: {{token}}
             </p>
+
+            <div id="contentArea"></div>
         </div>
     </body>
 

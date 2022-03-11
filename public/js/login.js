@@ -14,12 +14,8 @@ loginForm.addEventListener('submit', async (e) => {
 
     const email = emailInput.value
     const password = passwordInput.value
-    
-    console.log('Credentials obtained')
 
     const data = { email, password }
-
-    console.log('Data parsed')
 
     //const url = "http://localhost:3001/users/login"
     const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/login'

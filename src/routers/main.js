@@ -5,13 +5,13 @@ const router = express.Router()
 
 router.get('/main', (req, res) => {
 
-    const token = req.query.token
-    //if(token == 'abc123') {
-    res.render('main', {token:token})
+    const token = req.query.token   // Does nothing
+    //if(token == 'null') {
+        res.render('main', {token}) // Token does not get defined
     //}
 
     //else {
-       // res.render('index')
+    //   res.render('index')
     //}
     
 })

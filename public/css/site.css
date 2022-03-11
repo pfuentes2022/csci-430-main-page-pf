@@ -81,3 +81,15 @@ button {
 .make-account:hover {
     background-color: #535e85;
 }
+
+.accDelete {
+    background-color: #aa2c2c!important;
+}
+
+.logMsg {
+    color:#f76868!important;
+}
+
+.footerLine {
+    color:#dddbff;
+}
