@@ -1,6 +1,6 @@
 const protocol = window.location.protocol
 const host = window.location.host
-
+const modifyAccountModalSaveButton = document.querySelector("#modifyAccountModalSaveButton")
 const displayAccountItem = document.querySelector("#displayAccountItem")
 
 displayAccountItem.addEventListener("click", async(e) => {
@@ -27,6 +27,7 @@ displayAccountItem.addEventListener("click", async(e) => {
             const data = await response.json()
 
             const contentArea = document.querySelector("#contentArea")
+            document.getElementById("modifyAccountButton").style.display = "block"
             contentArea.innerHTML = `<div class="container">
                 <p>Name: ${data.name} <br>Email: ${data.email}</p>
                 </div>`
@@ -104,4 +105,45 @@ deleteAccountItem.addEventListener("click", async(e) => {
     } else {
         console.log('Cancelling deletion.')
     }
+})
+
+
+
+modifyAccountModalSaveButton.addEventListener("click", async(e) => {
+    e.preventDefault()
+
+    const token = localStorage.getItem("token")
+
+    //const url = "http://localhost:3001/users/me"
+    const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/me'
+
+    const nameInput = document.querySelector("#nameInput")
+    const passwordInput = document.querySelector("#passwordInput")
+    const name = nameInput.value
+    const password = passwordInput.value
+    const requestData = {...name && { name }, ...password && { password } }
+    //console.log(requestData)
+    console.log("Patching Account Details")
+    const options = {
+        method: "PATCH",
+        headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+    }
+
+    let response = await fetch(url, options)
+
+    if (response.status === 200) {
+        const contentArea = document.querySelector("#contentArea")
+        contentArea.innerHTML = `<div class=container"><p>Saved successful.</p></div>`
+    } else {
+        console.log("HTTP-Error: " + response.status)
+    }
+
+    const modal = document.querySelector("#modifyAccountModal")
+    bootstrap.Modal.getInstance(modal).hide()
+    document.getElementById("modifyAccountButton").style.display = "none"
+    const form = document.querySelector("#modifyAccountForm").reset()
 })

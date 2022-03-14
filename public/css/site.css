@@ -90,6 +90,15 @@ button {
     color:#f76868!important;
 }
 
+.modAcc {
+    display: none;
+}
+
+.modalAccForm {
+    background-color: #ffffff!important;
+    color: #161616!important;
+}
+
 .footerLine {
     color:#dddbff;
 }
