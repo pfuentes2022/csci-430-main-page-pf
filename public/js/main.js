@@ -476,7 +476,7 @@ deleteTaskModalButton.addEventListener("click" , async(e) => {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestData),
+        body: JSON.stringify(requestData)
     }
 
     let response = await fetch(url, options)
