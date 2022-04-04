@@ -145,8 +145,10 @@ modifyAccountModalSaveButton.addEventListener("click", async(e) => {
     let response = await fetch(url, options)
 
     if (response.status === 200) {
-        const contentArea = document.querySelector("#contentArea")
-        contentArea.innerHTML = `<div class=container"><p>Saved successful.</p></div>`
+        //const contentArea = document.querySelector("#contentArea")
+        //contentArea.innerHTML = `<div class=container"><p>Saved successful.</p></div>`
+        alert("Update successful")
+        location.reload()
     } else {
         console.log("HTTP-Error: " + response.status)
     }
@@ -212,18 +214,23 @@ getTaskList.addEventListener("click", async(e) => {     ///////////////// Start 
                     </div>`
 
                 });
-                const editTaskBtn = document.querySelector("#editTaskBtn")
-                editTaskBtn.addEventListener('click', function(e){
-                    localStorage.setItem('taskID', e.target.dataset.taskId)
-                });
 
-
-                const delTaskBtn = document.querySelector("#delTaskBtn")
-                delTaskBtn.addEventListener('click', function(e){
-                    console.log(e.target.dataset.taskId)
-                    localStorage.setItem('taskID', e.target.dataset.taskId)
-                });
-
+                //const editTaskBtn = 
+                document.querySelectorAll("#editTaskBtn").forEach(item =>{
+                    item.addEventListener('click', function(e){
+                        //console.log(e)
+                        console.log(e.target.dataset.taskId)
+                        localStorage.setItem('taskID', e.target.dataset.taskId)
+                    });
+                })
+                //const delTaskBtn = 
+                document.querySelectorAll("#delTaskBtn").forEach(item => {
+                    item.addEventListener('click', function(e){
+                        //console.log(e)
+                        console.log(e.target.dataset.taskId)
+                        localStorage.setItem('taskID', e.target.dataset.taskId)
+                    });
+                })
             }
         }
     } else {
@@ -273,23 +280,29 @@ getTaskListRight.addEventListener("click", async(e) => {     ///////////////// M
                         <button class="btn mod-task-btn" id="editTaskBtn" data-bs-toggle="modal" data-bs-target="#modifyTaskModal"
                             data-task-id=${element._id}>
                          Edit Task</button>
-                         <button class="btn del-task-btn" id="delTaskBtn" data-task-id=${element._id}>Delete</button>
+                         <button class="btn del-task-btn" id="delTaskBtn" data-task-id=${element._id} data-bs-toggle="modal"
+                            data-bs-target="#deleteTaskModal">Delete</button>
                          </div>
                     </div>`
 
                 });
-                const editTaskBtn = document.querySelector("#editTaskBtn")
-                editTaskBtn.addEventListener('click', function(e){
-                    console.log(e.target.dataset.taskId)
-                    localStorage.setItem('taskID', e.target.dataset.taskId)
+
+                //const editTaskBtn = 
+                document.querySelectorAll("#editTaskBtn").forEach(item => {
+                    item.addEventListener('click', function(e){
+                        //console.log(e)
+                        console.log(e.target.dataset.taskId)
+                        localStorage.setItem('taskID', e.target.dataset.taskId)
+                    })
                 })
-
-
-                const delTaskBtn = document.querySelector("#delTaskBtn")
-                delTaskBtn.addEventListener('click', function(e){
-                    console.log(e.target.dataset.taskId)
-                    localStorage.setItem('taskID', e.target.dataset.taskId)
-                });
+                //const delTaskBtn = 
+                document.querySelectorAll("#delTaskBtn").forEach(item => {
+                    item.addEventListener('click', function(e){
+                        //console.log(e)
+                        console.log(e.target.dataset.taskId)
+                        localStorage.setItem('taskID', e.target.dataset.taskId)
+                    });
+                })
             }
         }
     } else {
@@ -338,24 +351,29 @@ getTaskListLeft.addEventListener("click", async(e) => {         //#######       
                         <button class="btn mod-task-btn" id="editTaskBtn" data-bs-toggle="modal" data-bs-target="#modifyTaskModal"
                             data-task-id=${element._id}>
                         Edit Task</button>
-                        <button class="btn del-task-btn" id="delTaskBtn" data-task-id=${element._id}>Delete</button>
+                        <button class="btn del-task-btn" id="delTaskBtn" data-task-id=${element._id} data-bs-toggle="modal"
+                            data-bs-target="#deleteTaskModal">Delete</button>
                         </div>
-                </div>`
+                    </div>`
                 
             });
-            const editTaskBtn = document.querySelector("#editTaskBtn")
-            editTaskBtn.addEventListener('click', function(e){
-                console.log(e.target.dataset.taskId)
-                localStorage.setItem('taskID', e.target.dataset.taskId)
+
+            //const editTaskBtn = 
+            document.querySelectorAll("#editTaskBtn").forEach(item => {
+                item.addEventListener('click', function(e){
+                    //console.log(e)
+                    console.log(e.target.dataset.taskId)
+                    localStorage.setItem('taskID', e.target.dataset.taskId)
+                })
             })
-
-
-            const delTaskBtn = document.querySelector("#delTaskBtn")
-            delTaskBtn.addEventListener('click', function(e){
-                console.log(e.target.dataset.taskId)
-                localStorage.setItem('taskID', e.target.dataset.taskId)
-            });
-            
+            //const delTaskBtn = 
+            document.querySelectorAll("#delTaskBtn").forEach(item => {
+                item.addEventListener('click', function(e){
+                    //console.log(e)
+                    console.log(e.target.dataset.taskId)
+                    localStorage.setItem('taskID', e.target.dataset.taskId)
+                });
+            })
         }
     } else {
         console.log("HTTP-Error: " + response.status)
@@ -396,7 +414,8 @@ modifyTaskModalSaveButton.addEventListener("click", async(e) => {   //########  
     let response = await fetch(url, options)
 
     if (response.status === 200) {
-        alert("Task Updated\n\nPlease refresh the task to view changes")
+        location.reload()
+        alert("Task Updated")
 
     } else {
         alert("Failed to update task")
@@ -451,9 +470,12 @@ addTaskBtn.addEventListener("click", async(e) => {
     } 
     else if (response.status === 201) {
         alert("New task created")
+        /*
         document.getElementById("taskForm").style.display = "none"
         document.getElementById("addNewTaskShow").style.display = "block"
-        const form = document.querySelector("#taskForm").reset()
+        */
+        location.reload()
+        //const form = document.querySelector("#taskForm").reset()
     }
 })
 
@@ -482,7 +504,8 @@ deleteTaskModalButton.addEventListener("click" , async(e) => {
     let response = await fetch(url, options)
 
     if (response.status === 200) {
-        alert("Task Deleted\n\nPlease refresh the task to view changes")
+        alert("Task Deleted")
+        location.reload()
 
     } else {
         alert("Failed to delete task")

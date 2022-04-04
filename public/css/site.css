@@ -57,6 +57,7 @@ input {
 
 .site-dir:hover, .site-dir:active {
     text-decoration: underline;
+    background: #28345b;
 }
 
 .footer-custom {
