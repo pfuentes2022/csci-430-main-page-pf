@@ -437,8 +437,9 @@ addTaskBtn.addEventListener("click", async(e) => {
     } 
     else if (response.status === 201) {
         alert("New task created")
+        document.getElementById("taskForm").style.display = "none"
+        document.getElementById("addNewTaskShow").style.display = "block"
         const form = document.querySelector("#taskForm").reset()
-        location.reload()
     }
 })
 
