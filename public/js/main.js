@@ -283,6 +283,13 @@ getTaskListRight.addEventListener("click", async(e) => {     ///////////////// M
                     console.log(e.target.dataset.taskId)
                     localStorage.setItem('taskID', e.target.dataset.taskId)
                 })
+
+
+                const delTaskBtn = document.querySelector("#delTaskBtn")
+                delTaskBtn.addEventListener('click', function(e){
+                    console.log(e.target.dataset.taskId)
+                    localStorage.setItem('taskID', e.target.dataset.taskId)
+                });
             }
         }
     } else {
@@ -341,6 +348,13 @@ getTaskListLeft.addEventListener("click", async(e) => {         //#######       
                 console.log(e.target.dataset.taskId)
                 localStorage.setItem('taskID', e.target.dataset.taskId)
             })
+
+
+            const delTaskBtn = document.querySelector("#delTaskBtn")
+            delTaskBtn.addEventListener('click', function(e){
+                console.log(e.target.dataset.taskId)
+                localStorage.setItem('taskID', e.target.dataset.taskId)
+            });
             
         }
     } else {
