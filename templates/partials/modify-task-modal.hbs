@@ -1,0 +1,30 @@
+<div class="modal fade" id="modifyTaskModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Task Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="modalAccForm" id="modifyTaskForm">
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="titleInput">
+                </div>
+                <div class="mb-3">
+                    <label for="descInput" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="descInput">
+                </div>
+                <div class="mb-3">
+                    <label for="statInput" class="form-label">Completed?</label>
+                    <input type="checkbox" id="statInput" name="taskstat">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="modifyTaskModalSaveButton" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

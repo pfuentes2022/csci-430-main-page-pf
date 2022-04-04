@@ -1,10 +1,10 @@
 body{
-    background-color: #273151;
+    background-color: #1d2950;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 nav {
-    background-color: #456384;
+    background-color: #4578af;
 }
 
 h1 {
@@ -21,11 +21,12 @@ p {
 }
 
 form {
-    background: #2d3757;
+    background: #0c1327;
     padding:1em;
     color: #dddbff;
     justify-content: right;
     margin: .25em;
+    border-radius: 5px;
 }
 
 label {
@@ -34,14 +35,24 @@ label {
 
 button {
     color: rgb(220, 235, 255)!important;
-    background-color: #3d4d83!important;
+    background-color: #3d4d83;
     font-family:Arial, Helvetica, sans-serif;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+input {
+    border: 2px;
+    border-radius: 3px;
 }
 
 .site-dir {
     color: #dddbff;
     text-decoration: none;
     margin:0em, 0.5em ;
+    width: 30%;
 }
 
 .site-dir:hover, .site-dir:active {
@@ -54,8 +65,8 @@ button {
     font-size: .75em;
 }
 
-.sign-in:link, .sign-in:visited {
-    background-color: #3d4d83;
+.sign-in:link, .sign-in:visited, .sign-in {
+    background-color: #374983!important;
     text-decoration: none;
     font-family:Arial, Helvetica, sans-serif;
     color:rgb(220, 235, 255);
@@ -65,11 +76,12 @@ button {
 }
 
 .sign-in:hover {
-    background-color: #535e85;
+    background-color: #535e85!important;
+    color: #0D0D12!important;
 }
 
 .make-account, .make-account:link, .make-account:visited {
-    background-color: #3d4d83;
+    background-color: #374983!important;
     text-decoration: none;
     font-family:Arial, Helvetica, sans-serif;
     color:rgb(220, 235, 255);
@@ -79,15 +91,22 @@ button {
 }
 
 .make-account:hover {
-    background-color: #535e85;
+    background-color: #535e85!important;
+    color: #0D0D12!important;
 }
 
-.accDelete {
-    background-color: #aa2c2c!important;
+.accDelete, .accDelete:link, .accDelete:visited {
+    background-color: #ca2828!important;
+}
+
+.accDelete:hover {
+    background-color: #da6262!important;
+    color: #0D0D12!important;
 }
 
 .logMsg {
-    color:#f76868!important;
+    color:#ff1f1f!important;
+    margin:1em;
 }
 
 .modAcc {
@@ -101,4 +120,66 @@ button {
 
 .footerLine {
     color:#dddbff;
+}
+
+.task-card {
+    background-color: #121624;
+    border: 2px #161616;
+    border-radius: 6px;
+    padding: 1em;
+    margin:.5em 1.2em;
+    width:75%;
+}
+
+.add-task-btn, .add-task-btn:link, .add-task-btn:visited {
+    background-color:#4578af;
+}
+
+.add-task-btn:hover {
+    background-color: #84aad3;
+    color:#0D0D12!important;
+}
+
+.main-btn {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mod-task-btn, .mod-task-btn:link, .mod-task-btn:visited {
+    background-color: #252735;
+    
+}
+
+.mod-task-btn:hover {
+    background-color: #454565;
+}
+
+.task-card-nav {
+    margin: 0.2em auto 0em 5em;
+    width: 70%;
+    display: none;
+}
+
+.taskForm {
+    width:250px;
+    display:none;
+}
+
+.del-task-btn, .del-task-btn:link, .del-task-btn:visited {
+    background-color: #ca2828;
+}
+
+.del-task-btn:hover {
+    background-color: #da6262;
+    color:#0D0D12!important;
+}
+
+.taskbtn {
+    display: flex;
+    justify-content:space-between;
+}
+
+.modal-text{
+    color:black!important;
 }
