@@ -117,6 +117,38 @@ deleteAccountItem.addEventListener("click", async(e) => {
 })
 
 
+async function uploadAvatar() {
+    const token = localStorage.getItem("token")
+
+    //const url = 'http://localhost:3001/users/me/avatar'
+    const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/me/avatar'
+
+    const input = document.querySelector("#avatarInput")
+    
+    if(input.value.length == 0) {
+        return
+    }
+    const formData = new FormData();
+    formData.append('avatar', input.files[0]);
+
+    const options = {
+        method: "POST",
+        body: formData,
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+
+    let response = await fetch(url, options)
+
+    if (response.status === 200) {
+        console.log("upload successful")
+        //loadAvatar()
+    } else {
+        console.log("Error uploading avatar: " + response.status)
+    }
+}
+
 
 modifyAccountModalSaveButton.addEventListener("click", async(e) => {
     e.preventDefault()
@@ -143,7 +175,7 @@ modifyAccountModalSaveButton.addEventListener("click", async(e) => {
     }
 
     let response = await fetch(url, options)
-
+    uploadAvatar()
     if (response.status === 200) {
         //const contentArea = document.querySelector("#contentArea")
         //contentArea.innerHTML = `<div class=container"><p>Saved successful.</p></div>`
@@ -515,3 +547,38 @@ deleteTaskModalButton.addEventListener("click" , async(e) => {
     const modal = document.querySelector("#deleteTaskModal")
     bootstrap.Modal.getInstance(modal).hide()
 })
+
+async function loadAvatar() {
+    const token = localStorage.getItem("token")
+
+    //const url = 'http://localhost:3001/users/me/avatar'
+    const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/me/avatar'
+
+    const options = {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+
+    let response = await fetch(url, options)
+
+    if (response.status === 200) {
+        
+        const imageBlob = await response.blob()
+        const imageObjectURL = URL.createObjectURL(imageBlob);
+
+        const image = document.createElement('img')
+        image.src = imageObjectURL
+        image.className = 'profile-pic'
+
+        const container = document.getElementById("accControl")
+        image.style.width = "80px"
+        container.prepend(image)
+    }
+    else {
+        console.log("HTTP-Error: " + response.status)
+    }
+}
+
+loadAvatar()
