@@ -17,8 +17,8 @@ loginForm.addEventListener('submit', async (e) => {
 
     const data = { email, password }
 
-    const url = "http://localhost:3001/users/login"
-    //const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/login'
+    //const url = "http://localhost:3001/users/login"
+    const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users/login'
 
     const options = {
         method: "POST",

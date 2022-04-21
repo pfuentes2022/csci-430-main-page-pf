@@ -16,8 +16,8 @@ makeAccount.addEventListener('submit', async(e) => {
     const password = passwordInput.value;
     let data = { email, password, name }
 
-    const url = 'http://localhost:3001/users'
-    //const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users'
+    //const url = 'http://localhost:3001/users'
+    const url = 'https://csci-430-login-api-pfuentes.herokuapp.com/users'
 
     const options = {
         method: 'POST',
